@@ -1,0 +1,21 @@
+<app-head-bar></app-head-bar>
+
+<app-search-bar
+  [autos]="autoList"
+  [favorites]="favorites"
+  (selectAutoEvent)="updateAuto($event)"
+  (toggleFavoriteEvent)="toggleFavorite($event)"
+></app-search-bar>
+
+<div class="details" *ngIf="selectedAuto">
+  <div class="info">
+    <div class="row"><span>Make</span><strong>{{ selectedAuto.brand }}</strong></div>
+    <div class="row"><span>Model</span><strong>{{ selectedAuto.model }}</strong></div>
+    <div class="row"><span>Price</span><strong>{{ selectedAuto.price }} DNT</strong></div>
+    <div class="row"><span>Power</span><strong>{{ selectedAuto.power }} CV</strong></div>
+    <p class="stock">{{ selectedAuto.availability }} Units available</p>
+  </div>
+  <img [src]="'photos/' + selectedAuto.photo" [alt]="selectedAuto.brand + ' ' + selectedAuto.model" />
+</div>
+
+<app-favorites [favorites]="favorites" (removeFavorite)="toggleFavorite($event)"></app-favorites>

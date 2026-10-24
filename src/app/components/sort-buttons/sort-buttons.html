@@ -1,0 +1,6 @@
+<div class="sort-buttons">
+  <span>Sort</span>
+  <button type="button" [class.active]="active === 'price-asc'" (click)="sort('price-asc')">Price ↑</button>
+  <button type="button" [class.active]="active === 'price-desc'" (click)="sort('price-desc')">Price ↓</button>
+  <button type="button" [class.active]="active === 'power-desc'" (click)="sort('power-desc')">Power ↓</button>
+</div>

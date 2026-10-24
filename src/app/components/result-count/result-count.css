@@ -1,0 +1,14 @@
+p {
+  margin: 10px 0;
+  padding: 8px 12px;
+}
+
+.count {
+  border-left: 6px solid var(--blue);
+  background: var(--blue-light);
+}
+
+.no-results {
+  border: 2px solid var(--red);
+  color: var(--red);
+}

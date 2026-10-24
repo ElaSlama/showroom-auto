@@ -1,0 +1,33 @@
+.sort-buttons {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  margin-right: 8px;
+  color: var(--blue-dark);
+  font-weight: bold;
+}
+
+button {
+  padding: 6px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  background: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Les boutons se touchent : on enlève la bordure gauche en double */
+button + button {
+  border-left: none;
+}
+
+button:hover {
+  background: var(--blue-light);
+}
+
+button.active {
+  background: var(--ink);
+  color: white;
+}

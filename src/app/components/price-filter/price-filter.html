@@ -1,0 +1,4 @@
+<div class="price-filter">
+  <label for="max-price">Max price</label>
+  <input id="max-price" type="number" min="0" placeholder="DNT" #price [value]="maxPrice" (input)="updatePrice(price.value)" />
+</div>

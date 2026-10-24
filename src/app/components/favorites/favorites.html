@@ -1,0 +1,12 @@
+<section class="favorites">
+  <h2>Favorites ({{ favorites.length }})</h2>
+
+  <p class="empty" *ngIf="favorites.length === 0">No favorites yet. Click ♡ next to a model.</p>
+
+  <ul>
+    <li *ngFor="let auto of favorites">
+      <span>{{ auto.brand }} {{ auto.model }}</span>
+      <button type="button" (click)="remove(auto)">Remove</button>
+    </li>
+  </ul>
+</section>

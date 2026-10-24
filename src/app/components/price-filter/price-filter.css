@@ -1,0 +1,23 @@
+.price-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+label {
+  color: var(--blue-dark);
+  font-weight: bold;
+}
+
+input {
+  width: 90px;
+  padding: 6px 8px;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  font: inherit;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--blue);
+}

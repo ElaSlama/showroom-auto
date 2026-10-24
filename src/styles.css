@@ -1,0 +1,20 @@
+:root {
+  --ink: rgb(0, 102, 153);
+  --blue: rgb(51, 153, 204);
+  --blue-dark: rgb(0, 102, 153);
+  --blue-light: rgb(225, 240, 250);
+  --green: rgb(51, 204, 0);
+  --red: rgb(204, 51, 51);
+}
+
+/* La largeur d'une boîte inclut son padding et sa bordure */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 16px;
+  font-family: Georgia, 'Times New Roman', serif;
+}

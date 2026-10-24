@@ -1,0 +1,161 @@
+.search-bar,
+.tools,
+.results {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px;
+  border: 2px solid var(--ink);
+}
+
+label {
+  color: var(--blue-dark);
+  font-weight: bold;
+}
+
+input {
+  padding: 6px 8px;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  font: inherit;
+}
+
+/* Le cadre entoure la zone de saisie et le bouton ✕ */
+.search-input {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  border: 2px solid var(--ink);
+}
+
+.search-input:focus-within {
+  border-color: var(--blue);
+}
+
+.search-input input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+}
+
+.clear {
+  all: unset;
+  width: 34px;
+  border-left: 2px solid var(--ink);
+  text-align: center;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.clear:hover {
+  background: var(--ink);
+  color: white;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+button[type='submit'] {
+  padding: 8px 20px;
+  border: 2px solid var(--blue);
+  border-radius: 0;
+  color: white;
+  background: var(--blue);
+  font: inherit;
+  cursor: pointer;
+}
+
+button[type='submit']:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.reset {
+  padding: 6px 12px;
+  border: 2px solid var(--red);
+  border-radius: 0;
+  background: white;
+  color: var(--red);
+  font: inherit;
+  cursor: pointer;
+}
+
+.reset:hover:not(:disabled) {
+  background: var(--red);
+  color: white;
+}
+
+/* Grisé quand aucun filtre n'est actif */
+.reset:disabled {
+  border-color: lightgray;
+  color: lightgray;
+  cursor: default;
+}
+
+.auto-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 2px solid var(--ink);
+}
+
+/* Pas de cadre vide quand il n'y a aucun résultat */
+.auto-list:empty {
+  display: none;
+}
+
+.auto-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+}
+
+.auto-list li + li {
+  border-top: 1px solid var(--ink);
+}
+
+.model {
+  font-weight: bold;
+}
+
+.specs {
+  flex: 1;
+  color: gray;
+}
+
+.fav {
+  all: unset;
+  width: 20px;
+  font-size: 1.2em;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.fav.on {
+  color: var(--red);
+}
+
+.view {
+  all: unset;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.view:hover {
+  text-decoration: underline;
+}

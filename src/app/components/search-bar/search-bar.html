@@ -1,0 +1,45 @@
+<form class="search-bar" (submit)="$event.preventDefault()">
+  <label for="brand">Brand</label>
+  <div class="search-input">
+    <input
+      id="brand"
+      type="text"
+      #brand
+      placeholder="Example : BMW"
+      [value]="brandText"
+      (input)="brandText = brand.value"
+    />
+    <button type="button" class="clear" *ngIf="brandText" (click)="clearSearch(); brand.focus()" aria-label="Clear search">
+      ✕
+    </button>
+  </div>
+  <button type="submit" (click)="searchAutoList(brand.value)">Search</button>
+</form>
+
+<div class="tools">
+  <app-price-filter #priceFilter (maxPriceChange)="updateMaxPrice($event)"></app-price-filter>
+  <app-sort-buttons #sortButtons (sortChange)="updateSort($event)"></app-sort-buttons>
+  <button
+    type="button"
+    class="reset"
+    [disabled]="maxPrice === null && sortBy === ''"
+    (click)="priceFilter.reset(); sortButtons.reset()"
+  >
+    Reset
+  </button>
+</div>
+
+<div class="results">
+  <app-result-count *ngIf="searched" [count]="autoList.length"></app-result-count>
+
+  <ul class="auto-list">
+    <li *ngFor="let auto of autoList">
+      <button type="button" class="fav" [class.on]="isFavorite(auto)" (click)="toggleFavorite(auto)">
+        {{ isFavorite(auto) ? '♥' : '♡' }}
+      </button>
+      <span class="model">{{ auto.model }}</span>
+      <span class="specs">{{ auto.price }} DNT · {{ auto.power }} CV</span>
+      <button type="button" class="view" (click)="selectedAuto(auto)">View...</button>
+    </li>
+  </ul>
+</div>
